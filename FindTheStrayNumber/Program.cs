@@ -10,14 +10,13 @@ namespace FindTheStrayNumber
         static void Main(string[] args)
         {
 			int[] a1 = { 1, 1, 2 };
-			//int[] a2 = { 17, 17, 3, 17, 17, 17, 17 };
-			int[] a2 = { 1, 2, 1, 2, 3 };
+			int[] a2 = { 17, 17, 3, 17, 17, 17, 17 };
 
 			var n1 = a1.Aggregate((a, b) => a ^ b);
 			var n2 = a2.Aggregate((a, b) => a ^ b);
 
 			n1 = GetStrayNumber(a1);
-			n1 = GetStrayNumber(a2);
+			n2 = GetStrayNumber(a2);
 			
 
 			WriteLine($"n1 => {n1}, n2 => {n2}");
@@ -33,7 +32,7 @@ namespace FindTheStrayNumber
 				var a = xor;
 				var b = arr[i + 1];
 				xor = a ^ b;
-				//WriteLine($"{a} ^ {b} = {xor}");
+
 				WriteLine($"{format(a)} ^ {format(b)} = {format(xor)}");
 			}
 			WriteLine(new string('=', 80));
